@@ -7,11 +7,11 @@ array = ['Kamchatka', 'Japan', 'Eastern Australia', 'Alaska', 'Northwest Territo
 
 subject = Printer()
 assigner = Assigner()
-scrambled_ters = assigner.randomise(array)
-assigned_array = assigner.chunk_territories(scrambled_ters, 2)
+# scrambled_ters = assigner.randomise(array)
+assigned_array = assigner.chunk_territories(array, 2)
 
 class TestPrinter:
     def test_print_string_player1(self):
         print('subject.print_ters(assigned_array)', subject.print_ters(assigned_array))
-        assert subject.print_ters(assigned_array) == "Player 1:\nKamchatka\nEastern Australia\nNorthwest Territory\n\nPlayer 2:\nJapan\nAlaska\nIceland"
+        assert subject.print_ters(assigned_array) == 'Player 1:\nKamchatka\nEastern Australia\nNorthwest Territory\nPlayer 2:\nJapan\nAlaska\nIceland'
   
