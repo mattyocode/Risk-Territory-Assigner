@@ -3,17 +3,19 @@ import random
 from lib import Assigner
 
 array = ['Kamchatka', 'Japan', 'Eastern Australia', 'Alaska', 'Northwest Territory', 'Iceland']
-
+full_list = ['Alaska', 'Northwest Territory', 'Greenland', 'Alberta', 'Ontario', 'Quebec', 'Western United States', 'Eastern United States', 'Central America', 'Venezuela', 'Peru', 'Brazil', 'Argentina', 'North Africa', 'Egypt', 'East Africa', 'Congo', 'South Africa', 'Madagascar', 'Iceland', 'Scandinavia', 'Ukraine', 'Great Britian', 'Northern Europe', 'Southern Europe', 'Western Europe', 'Indonesia', 'New Guinea', 'Western Australia', 'Eastern Australia', 'Siam', 'India', 'China', 'Mongolia', 'Japan', 'Irkutsk', 'Yakutsk', 'Kamchatka', 'Siberia', 'Afghanistan', 'Ural', 'Middle East']
 
 subject = Assigner()
+class TestRandomiser:
+    def test_randomise_returns_shuffled_array(self):
+        assert subject.randomise(array) != array
 
-def test_randomise_returns_shuffled_array():
-    assert subject.randomise(array) != array
+class TestRandChunkTerritories:
+    def test_iterate_over_shortlist_split_between_2(self):
+        assert subject.rand_chunk_territories(array, 2) == [['Kamchatka', 'Eastern Australia', 'Northwest Territory'], ['Japan', 'Alaska', 'Iceland']]
 
-def test_assign_shuffled_arrays_to_2_players():
-    print('subject.assign(array, 2)', subject.assign(array, 2))
-    assert subject.assign(array, 2) == [['Kamchatka', 'Japan', 'Eastern Australia'], ['Alaska', 'Northwest Territory', 'Iceland']]
+    def test_iterate_over_shortlist_split_between_3(self):
+        assert subject.rand_chunk_territories(array, 3) == [['Kamchatka', 'Alaska'], ['Japan', 'Northwest Territory'], ['Eastern Australia', 'Iceland']]
 
-def test_assign_shuffled_arrays_to_3_players():
-    print('subject.assign(array, 3)', subject.assign(array, 3))
-    assert subject.assign(array, 3) == [['Kamchatka', 'Japan'], ['Eastern Australia', 'Alaska'], ['Northwest Territory', 'Iceland']]
+    def test_assign_full_list_to_6_players(self):
+        assert subject.rand_chunk_territories(full_list, 6) == [['Alaska', 'Western United States', 'Argentina', 'Madagascar', 'Southern Europe', 'Siam', 'Yakutsk'], ['Northwest Territory', 'Eastern United States', 'North Africa', 'Iceland', 'Western Europe', 'India', 'Kamchatka'], ['Greenland', 'Central America', 'Egypt', 'Scandinavia', 'Indonesia', 'China', 'Siberia'], ['Alberta', 'Venezuela', 'East Africa', 'Ukraine', 'New Guinea', 'Mongolia', 'Afghanistan'], ['Ontario', 'Peru', 'Congo', 'Great Britian', 'Western Australia', 'Japan', 'Ural'], ['Quebec', 'Brazil', 'South Africa', 'Northern Europe', 'Eastern Australia', 'Irkutsk', 'Middle East']]
