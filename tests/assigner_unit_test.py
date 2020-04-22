@@ -37,4 +37,4 @@ class TestRandChunkTerritories:
         assert len(ters[1]) == 9
         assert len(ters[2]) == 8
         assert len(ters[3]) == 8
-        assert len(ters[3]) == 8
+        assert len(ters[4]) == 8
