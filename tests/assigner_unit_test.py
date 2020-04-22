@@ -19,3 +19,8 @@ class TestRandChunkTerritories:
 
     def test_assign_full_list_to_6_players(self):
         assert subject.rand_chunk_territories(full_list, 6) == [['Alaska', 'Western United States', 'Argentina', 'Madagascar', 'Southern Europe', 'Siam', 'Yakutsk'], ['Northwest Territory', 'Eastern United States', 'North Africa', 'Iceland', 'Western Europe', 'India', 'Kamchatka'], ['Greenland', 'Central America', 'Egypt', 'Scandinavia', 'Indonesia', 'China', 'Siberia'], ['Alberta', 'Venezuela', 'East Africa', 'Ukraine', 'New Guinea', 'Mongolia', 'Afghanistan'], ['Ontario', 'Peru', 'Congo', 'Great Britian', 'Western Australia', 'Japan', 'Ural'], ['Quebec', 'Brazil', 'South Africa', 'Northern Europe', 'Eastern Australia', 'Irkutsk', 'Middle East']]
+
+    def test_equal_nums_of_territories_when_6_players(self):
+        ters = subject.rand_chunk_territories(full_list, 6)
+        assert len(subject.rand_chunk_territories(full_list, 6)[0]) == 7
+        assert len(subject.rand_chunk_territories(full_list, 6)[5]) == 7
