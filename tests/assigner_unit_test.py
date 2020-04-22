@@ -21,6 +21,20 @@ class TestRandChunkTerritories:
         assert subject.rand_chunk_territories(full_list, 6) == [['Alaska', 'Western United States', 'Argentina', 'Madagascar', 'Southern Europe', 'Siam', 'Yakutsk'], ['Northwest Territory', 'Eastern United States', 'North Africa', 'Iceland', 'Western Europe', 'India', 'Kamchatka'], ['Greenland', 'Central America', 'Egypt', 'Scandinavia', 'Indonesia', 'China', 'Siberia'], ['Alberta', 'Venezuela', 'East Africa', 'Ukraine', 'New Guinea', 'Mongolia', 'Afghanistan'], ['Ontario', 'Peru', 'Congo', 'Great Britian', 'Western Australia', 'Japan', 'Ural'], ['Quebec', 'Brazil', 'South Africa', 'Northern Europe', 'Eastern Australia', 'Irkutsk', 'Middle East']]
 
     def test_equal_nums_of_territories_when_6_players(self):
-        ters = subject.rand_chunk_territories(full_list, 6)
         assert len(subject.rand_chunk_territories(full_list, 6)[0]) == 7
         assert len(subject.rand_chunk_territories(full_list, 6)[5]) == 7
+
+    def test_unequal_nums_of_ters_when_4(self):
+        ters = subject.rand_chunk_territories(full_list, 4)
+        assert len(ters[0]) == 11
+        assert len(ters[1]) == 11
+        assert len(ters[2]) == 10
+        assert len(ters[3]) == 10
+    
+    def test_unequal_nums_of_ters_when_5(self):
+        ters = subject.rand_chunk_territories(full_list, 5)
+        assert len(ters[0]) == 9
+        assert len(ters[1]) == 9
+        assert len(ters[2]) == 8
+        assert len(ters[3]) == 8
+        assert len(ters[3]) == 8
