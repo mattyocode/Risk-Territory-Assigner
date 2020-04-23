@@ -14,7 +14,7 @@ assigned_test_array = assigner.chunk_territories(test_array, 6)
 
 class TestPrinter:
     def test_print_string_2_player(self):
-        assert subject.print_ters(assigned_array) == 'Player 1:\nKamchatka\nEastern Australia\nNorthwest Territory\nPlayer 2:\nJapan\nAlaska\nIceland'
+        assert subject.print_ters(assigned_array) == 'Player 1:\nKamchatka\nEastern Australia\nNorthwest Territory\n\nPlayer 2:\nJapan\nAlaska\nIceland'
   
     def test_print_string_6_player(self):
-        assert subject.print_ters(assigned_test_array) == 'Player 1:\n1\n7\nPlayer 2:\n2\n8\nPlayer 3:\n3\n9\nPlayer 4:\n4\n10\nPlayer 5:\n5\n11\nPlayer 6:\n6\n12'
+        assert subject.print_ters(assigned_test_array) == 'Player 1:\n1\n7\n\nPlayer 2:\n2\n8\n\nPlayer 3:\n3\n9\n\nPlayer 4:\n4\n10\n\nPlayer 5:\n5\n11\n\nPlayer 6:\n6\n12'
