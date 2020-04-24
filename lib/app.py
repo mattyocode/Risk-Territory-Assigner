@@ -6,4 +6,9 @@ full_list = ['Alaska', 'Northwest Territory', 'Greenland', 'Alberta', 'Ontario',
 assigner = Assigner()
 scrambled_list = assigner.randomise(full_list)
 printer = Printer()
-printer.print_ters(assigner.chunk_territories(scrambled_list, 6))
+
+print("Please enter number of players: ")
+input = input()
+number = int(input)
+print('Printing territories for {} players...\n'.format(number))
+printer.print_ters(assigner.chunk_territories(scrambled_list, number))
