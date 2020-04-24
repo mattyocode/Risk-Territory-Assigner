@@ -2,7 +2,7 @@ import assigner
 
 class Printer:
 
-    def print_ters(self, array):
+    def print_territories(self, array):
         string = ''
         counter = 0
         for i in array:
