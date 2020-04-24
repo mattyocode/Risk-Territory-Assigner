@@ -1,4 +1,4 @@
-# Risk-Territory-Assigner
+# Risk-Territory-Assigner :game_die:
 
 Simple tool to randomly assign territories to 2 - 6 players at the start of a game of Risk. 
 
@@ -12,9 +12,22 @@ It could also be used if you are playing the tabletop game but just cant muster 
 
 ### Build Status
 
-Basic back end complete. Front end on its way. 
+Basic back end complete (can be run in command line, see [below](#how-to-use)). Front end on its way. 
 
 ### Tech
 
 Python / Pytest. 
 
+### How to Use
+
+Clone this repo. Navigate to directory in command line. 
+
+Run the app by typing this in the command line:
+
+``` 
+python3 app.py 
+```
+
+Input number of players when prompted and you will receive that number of lists of territories, randomised and ready for you to play with: 
+
+![sample output](assets/sample-output.png)
