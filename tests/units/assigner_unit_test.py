@@ -7,6 +7,7 @@ full_list = ['Alaska', 'Northwest Territory', 'Greenland', 'Alberta', 'Ontario',
 subject = Assigner()
 class TestRandomiser:
     def test_randomise_returns_shuffled_array(self):
+        # not ideal as will fail occassionally...
         assert subject.randomise(array) != array
 
 class TestRandChunkTerritories:
